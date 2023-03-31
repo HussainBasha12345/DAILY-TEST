@@ -1,0 +1,28 @@
+#include <stdio.h>
+int factorial(int n);
+int gcd(int x, int y);
+int main()
+{
+    int n, f, g;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    f = factorial(n);
+    printf("Factorial of %d is %d\n", n, f);
+    g = gcd(24, n);
+    printf("GCD of %d and 24 is %d\n", n, g);
+    return 0;
+}
+int factorial(int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+int gcd(int x, int y)
+{
+    if (y == 0)
+        return x;
+    else
+        return gcd(y, x % y);
+}
